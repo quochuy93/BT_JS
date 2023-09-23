@@ -1,0 +1,31 @@
+:root {
+  --dark-mode-clr: #fff;
+  --dark-mode-bg-clr: rgba(22, 24, 35, 0.5);
+
+  --main-clr: #000;
+  --main-bg-clr: #fff;
+}
+
+a {
+  display: inline-block;
+  color: var(--main-clr);
+  background-color: var(--main-bg-clr);
+}
+
+body {
+  color: var(--main-clr);
+  background-color: var(--main-bg-clr);
+}
+
+body.dark-mode {
+  --main-clr: var(--dark-mode-clr);
+  --main-bg-clr: var(--dark-mode-bg-clr);
+}
+
+.bg-red {
+  background-color: #f62682;
+}
+
+.primary {
+  background-color: #6a5af9 !important;
+}
