@@ -82,67 +82,67 @@
 // }
 
 
-var myInfo = {
-  id: 1,
-  name: Huy,
-  age: 27,
-  favorites: ['soccer', 'JavaScript','HTML'],
-  isDeveloper: true,
-  job: {
-    id: 101,
-    name: Hung,
-    salary: 1000,
-    rate: 1.5
-  },
-  getName: function() {
-    return this.name
-  },
-  setName: function(new_name) {
-    this.name = new_name
-  },
-  getFavorite: function() {
-    return this.favorites
-  },
-  setFavorite: function(new_favorite) {
-    this.favorites.push(new_favorite)
-  },
-  showInfor: function () {
-    console.log(this)
-  },
-  getYear: function () {
-    return 2023 - this.age
-  },
+// var myInfo = {
+//   id: 1,
+//   name: Huy,
+//   age: 27,
+//   favorites: ['soccer', 'JavaScript','HTML'],
+//   isDeveloper: true,
+//   job: {
+//     id: 101,
+//     name: Hung,
+//     salary: 1000,
+//     rate: 1.5
+//   },
+//   getName: function() {
+//     return this.name
+//   },
+//   setName: function(new_name) {
+//     this.name = new_name
+//   },
+//   getFavorite: function() {
+//     return this.favorites
+//   },
+//   setFavorite: function(new_favorite) {
+//     this.favorites.push(new_favorite)
+//   },
+//   showInfor: function () {
+//     console.log(this)
+//   },
+//   getYear: function () {
+//     return 2023 - this.age
+//   },
 
-}
+// }
 
-var employee = Object.create(myInfo);
-employee.rank = 1;
-employee.getRank = function(){
-  return employee.rank
-};
-employee.setRank = function(new_rank) {
-  employee.rank = new_rank
-};
+// var employee = Object.create(myInfo);
+// employee.rank = 1;
+// employee.getRank = function(){
+//   return employee.rank
+// };
+// employee.setRank = function(new_rank) {
+//   employee.rank = new_rank
+// };
 
-var listKey = Object.keys(myInfo);
-console.log(listKey);
+// var listKey = Object.keys(myInfo);
+// console.log(listKey);
 
-var listKey2 = Object.getOwnPropertyNames(myInfo);
-console.log(listKey2);
+// var listKey2 = Object.getOwnPropertyNames(myInfo);
+// console.log(listKey2);
 
-var listValue = Object.values(myInfo);
-console.log(listValue);
+// var listValue = Object.values(myInfo);
+// console.log(listValue);
 
-var listKeyValue = Object.entries(myInfo);
-console.log(listKeyValue);
+// var listKeyValue = Object.entries(myInfo);
+// console.log(listKeyValue);
 
-var w = myInfo.hasOwnProperty('job')
-var hasJobKey = 'job' in myInfo;
-console.log(hasJobKey)
+// var w = myInfo.hasOwnProperty('job')
+// var hasJobKey = 'job' in myInfo;
+// console.log(hasJobKey)
 
-var new_person = Object.assign({},myInfo);
-new_person.name = 'new_Hung';
-new_person.age = 12;
+// var new_person = Object.assign({},myInfo);
+// new_person.name = 'new_Hung';
+// new_person.age = 12;
 
 
 
@@ -546,6 +546,7 @@ var cars = [
 //   console.log(car, idx)
 // })
 
+
 // 2. map (return new array)
 // var carListHtml = cars.map((car, idx) => {
 //   return /* html */ `<li>${car.id} - ${car.name} - ${car.price}$</li>`
@@ -556,14 +557,14 @@ var cars = [
 // )
 // console.log(carListHtml)
 
-// 3. every (&& return boolean)
-// var hasAllCarFree = cars.every((car, idx) => {
-//   console.log(car)
+// 3. every (&& return boolean): check whether all value is follow the requirement
+// var hasAllCarFree = cars.every((car) => {
+//   // console.log(car)
 //   return car.price === 0
 // })
 
-// var hasAllCarFree = cars.every((car, idx) => car.price === 0)
-// console.log(hasAllCarFree)
+
+// var hasAllCarFree = cars.every((car) => car.price === 0);
 
 // 4. some (|| return boolean)
 // var existCarFree = cars.some((car, idx) => {
@@ -650,6 +651,64 @@ var cars = [
 // var newArr = [2, 3, 4, 5]._map((x) => x ** 2)
 // console.log(newArr)
 
+
+
+
+
+// Array.prototype._forEach = function (callbackfn,thisArgs) {
+//   if (typeof callbackfn === 'function'){
+//     for (var i in this) {
+//       if (this.hasOwnProperty(i)){
+//         callbackfn(this[i], i, this)
+//       }
+//     }
+//   } else {
+//     throw new TypeError (`${callbackfn} is not a function`)
+//   }
+// }
+
+// var sum = 0;
+// function myFunction(item) {
+  
+//   sum +=item;
+//   console.log(sum)
+//   return sum;
+// }
+
+// var newvalue = [1,3,5,7,9].forEach(myFunction);
+// // var newvalue = [1,3,5,7,9]._forEach(myFunction);
+
+// console.log(newvalue);
+
+
+
+
+
+Array.prototype._every = function(callbackfn, thisArgs) {
+  if (typeof callbackfn === 'function') {
+    for (var i in this) {
+      if (this.hasOwnProperty(i)) {
+        var check = callbackfn(this[i], i, this);
+        if (!check) {
+          return false;
+        }
+      }
+    }
+    return true;
+  } else {
+    throw new TypeError (`$(callbackfn) is not a function`)
+  }
+}
+
+
+// var hasAllCarFree = cars._every((car) => car.price === 0);
+
+var hasAllCarFree = cars._every((car) => {
+  console.log(car)
+  return car.price ===0;
+})
+
+console.log(hasAllCarFree);
 // _forEach (Kiều)
 /* Array.prototype._forEach = function (callbackfn, thisArgs) {
   if (typeof callbackfn === 'function') {
