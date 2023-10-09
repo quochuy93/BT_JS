@@ -28,17 +28,17 @@ function add(fruit) {
 function remove(fruit) {
   var check = false;
   do {
-  var name = prompt("Enter name of fruit to remove: ");
-  var x = fruit.indexOf(name);
-  if (x>-1) {
-  fruit.splice(fruit.indexOf(name), 1);
-  console.log(`New list after removing: ${fruit}`);
-  check = true;
-} else {
-    console.log(`There is no ${name} in the list!`);
-    alert('Please enter the correct fruit to delete!')
-}
-} while (!check);
+    var name = prompt("Enter name of fruit to remove: ");
+    var x = fruit.indexOf(name);
+    if (x > -1) {
+      fruit.splice(fruit.indexOf(name), 1);
+      console.log(`New list after removing: ${fruit}`);
+      check = true;
+    } else {
+      console.log(`There is no ${name} in the list!`);
+      alert("Please enter the correct fruit to delete!");
+    }
+  } while (!check);
   return fruit;
 }
 // + Thay thế 1 quả bất kỳ
@@ -119,8 +119,12 @@ function sortZA(fruit) {
 // Pick the action to run
 function action(fruit) {
   var check = false;
+  // alert("Choose the action to run:");
+  // alert(
+  //   "Choose the action to run:.\n1 for add.\n2 for remove.\n3 for replace.\n4 for find start and ending fruit.\n5 for find middle fruit.\n6 for find fruit with letter A.\n7 for checking whether Apple is exist.\n8 for combine a new list.\n9 for sort from small to big.\n10 for sort from big to small.\n0 for end the action"
+  // );
   do {
-    const x = prompt("Please choose the action to do: ");
+    const x = prompt("Choose the action to run:.\n1 for add.\n2 for remove.\n3 for replace.\n4 for find start and ending fruit.\n5 for find middle fruit.\n6 for find fruit with letter A.\n7 for checking whether Apple is exist.\n8 for combine a new list.\n9 for sort from small to big.\n10 for sort from big to small.\n0 for end the action ");
     if (x == 1) {
       fruit = add(fruit);
     } else if (x == 2) {
