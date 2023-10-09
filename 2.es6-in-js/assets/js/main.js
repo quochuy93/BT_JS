@@ -348,14 +348,69 @@
 
 // console.log(name)
 
+// const course = {
+//   name: 'javascript',
+//   price: 3000,
+//   image: 'image-address',
+//   book: {
+//     id: 1,
+//     name: 'Lord Founder',
+//   },
+//   tags: ['nodejs', 'npm', 'dom'],
+// }
+
+// const newCourse = Object.assign({}, course);
+
+// console.log(newCourse);
+
+// newCourse.id = 1;
+
+// console.log(newCourse.id);
+
+
+
+// newCourse['id'] = 5;
+
+// console.log(newCourse.id);
+
+// delete newCourse.id;
+
+// console.log(newCourse);
+
+// const rank = {
+//   id : 10,
+//   name: "A",
+//   level: 3,
+//   score: 1000
+// }
+
+// newCourse['rank'] = rank;
+// newCourse.rank = rank;
+
+// console.log(newCourse);
+
+// newCourse.rank.name = "rankName";
+
+// console.log(newCourse);
+
+// newCourse.rank.score = 2000;
+
+// console.log(newCourse);
+
+// console.log(newCourse.tags[1]);
+
+// console.log(newCourse.tags[length -(length-1)]);
+
+
+
 //? 9. Rest parameter (...rest)
 //? destructuring or param function
 
 //? TH1: Array
 // const arr = ['Javascript', 'PHP', 'Ruby']
-// const [a, ...rest] = arr
+// const [H, ...rest] = arr
 
-// console.log(a)
+// console.log(H)
 // console.log(rest)
 
 //? TH2: Object
@@ -418,6 +473,7 @@
 // const arr1 = ['Javascript', 'Ruby', 'PHP']
 // const arr2 = ['ReactJS', 'Dart']
 // const arr3 = [...arr1, ...arr2]
+// noi arr: concat
 
 // console.log(arr3)
 
@@ -435,6 +491,8 @@
 
 // const obj3 = { ...obj1, ...obj2 }
 // console.log(obj3)
+
+// gop obj: assign
 
 // const defaultConfig = {
 //   api: 'https://qtechfun.com',
@@ -489,6 +547,84 @@
 
 // document.getElementById('app').innerHTML = /* html */ `<h3>${html}</h3>`
 
+
+// Tạo ra một mảng fruits [4] lưu trong localStorage
+// const fruit = ["apple", "banana", "peach", "lemon"];
+// function save(fruit){
+//   localStorage.setItem("fruit", JSON.stringify(fruit))
+// }
+
+// function get(){
+//   return JSON.parse(localStorage.getItem("fruit"));
+// }
+// save(fruit);
+
+// // // + Thêm 1 quả 
+// get();
+// console.log(fruit);
+// fruit.push("lime");
+// console.log(fruit);
+// save(fruit);
+
+// + Xóa 1 quả bất kỳ
+// get();
+// const fruit2 = fruit.slice();
+// fruit2.splice(2,1)
+// console.log(fruit2)
+// // + Thay thế 1 quả bất kỳ
+// const fruit3 = fruit.slice();
+// fruit3[1] = "grape";
+// console.log(fruit3);
+// // + Tìm quả ở vị trí đầu và cuổi
+// console.log(fruit[0]);
+// const x = fruit.length;
+// console.log(fruit[x - 1]);
+// // + Tìm quả ở vị trí giữa
+// console.log(fruit[(x - (x % 2))/2]);
+// // + Tìm các loại quả chứa chữ "a"
+// var newFruit = [];
+// for (var i in fruit) {
+//   var index = fruit[i].indexOf('a');
+//   if (index >-1){
+//     newFruit.push(fruit[i]);
+//   }
+// }
+// console.log(newFruit);
+// // + Kiểm tra xem trong mảng có Apple k0
+// function isApple (x) {
+//   var x = fruit.indexOf('apple');
+//   if (x >-1)
+//   return true;
+//   else
+//   return false;
+// }
+
+// console.log(isApple(fruit));
+
+// // + Gộp thêm 2 loại quả bất kỳ ở mảng khác vào mảng fruits
+// var secondFruit = ["mango", "orange"];
+// var finalFruit = fruit.concat(secondFruit);
+// console.log(finalFruit);
+// // + Sắp xếp theo A-Z và Z-A (hof: soft)
+// var finalFruit2 = fruit.sort();
+// console.log(finalFruit2);
+
+// fruit.sort((a,b) => (a>b ? -1 : 1))
+// console.log(fruit);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //? 12. Modules Pattern (Design Pattern)
 // Note: 1 file => 1 export default (main)
 //              => multiple name exports (branch)
@@ -524,8 +660,8 @@
 // if (obj.cat) console.log(obj.cat.name)
 // if (obj.hasOwnProperty('cat')) console.log(obj.cat.name)
 
-const obj = {
-  name: 'Alice',
+// const obj = {
+//   name: 'Alice',
   // cat: {
   //   name: 'Tom',
   //   cat2: {
@@ -535,7 +671,7 @@ const obj = {
   //     },
   //   },
   // },
-}
+// }
 
 // if (obj.cat && obj.cat.cat2 && obj.cat.cat2.cat3) console.log(obj.cat.cat2.cat3.name)
 // if (obj?.cat?.cat2?.cat3?.name) console.log(obj.cat.cat2.cat3.name)

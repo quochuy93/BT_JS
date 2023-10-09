@@ -56,12 +56,12 @@
 // localStorage.removeItem('user') // remove one
 
 // ['a', 'b', 'c'] (JS data) => "['a', 'b', 'c']" (JSON string)
-// localStorage.setItem('fruits', JSON.stringify(['apple', 'orange', 'water melon', 'mango']))
+localStorage.setItem('fruits', JSON.stringify(['apple', 'orange', 'water melon', 'mango']))
 // "['a', 'b', 'c']" (JSON string) => ['a', 'b', 'c'] (JS data)
-// var fruits = JSON.parse(localStorage.getItem('fruits'))
+var fruits = JSON.parse(localStorage.getItem('fruits'))
 
-// fruits.splice(fruits.indexOf('water melon'), 1)
-// console.log(fruits)
+fruits.splice(fruits.indexOf('water melon'), 1)
+console.log(fruits)
 // localStorage.setItem('fruits', JSON.stringify(fruits))
 
 // Clear => Xóa hết toàn bộ các item trong storage (DANGER)

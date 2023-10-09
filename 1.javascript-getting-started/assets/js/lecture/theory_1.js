@@ -139,7 +139,7 @@
 
 // Popup
 // alert('This is an alert!')
-// var check = confirm('Are you sure you want to do that?')
+var check = confirm('Are you sure you want to do that?')
 // console.log('Check:', check)
 // var name = prompt("What's your name?")
 // console.log(`🚀 | name:`, name) // null || '' || Quyen

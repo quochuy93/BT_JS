@@ -507,38 +507,38 @@
 /*
   Higer order functions là hàm hoạt động trên các hàm khác, bằng cách lấy chúng làm tham số hoặc trả về chúng. Nói 1 cách  đơn giản, hof là hàm nhận một hàm nhàm dưới dạng đối số hoặc trả về hàm dưới dạng đầu ra.
 */
-var cars = [
-  {
-    id: 1,
-    name: 'Honda',
-    price: 0,
-  },
-  {
-    id: 2,
-    name: 'Toyota',
-    price: 1000,
-  },
-  {
-    id: 3,
-    name: 'Huyndai',
-    price: 1000,
-  },
-  {
-    id: 4,
-    name: 'Jeep',
-    price: 0,
-  },
-  {
-    id: 5,
-    name: 'Subaru',
-    price: 3000,
-  },
-  {
-    id: 6,
-    name: 'Ford',
-    price: 3000,
-  },
-]
+// var cars = [
+//   {
+//     id: 1,
+//     name: 'Honda',
+//     price: 0,
+//   },
+//   {
+//     id: 2,
+//     name: 'Toyota',
+//     price: 1000,
+//   },
+//   {
+//     id: 3,
+//     name: 'Huyndai',
+//     price: 1000,
+//   },
+//   {
+//     id: 4,
+//     name: 'Jeep',
+//     price: 0,
+//   },
+//   {
+//     id: 5,
+//     name: 'Subaru',
+//     price: 3000,
+//   },
+//   {
+//     id: 6,
+//     name: 'Ford',
+//     price: 3000,
+//   },
+// ]
 // console.log(cars)
 // (value, index, originArray)
 // 1. forEach (k0 trả về value)
@@ -684,31 +684,31 @@ var cars = [
 
 
 
-Array.prototype._every = function(callbackfn, thisArgs) {
-  if (typeof callbackfn === 'function') {
-    for (var i in this) {
-      if (this.hasOwnProperty(i)) {
-        var check = callbackfn(this[i], i, this);
-        if (!check) {
-          return false;
-        }
-      }
-    }
-    return true;
-  } else {
-    throw new TypeError (`$(callbackfn) is not a function`)
-  }
-}
+// Array.prototype._every = function(callbackfn, thisArgs) {
+//   if (typeof callbackfn === 'function') {
+//     for (var i in this) {
+//       if (this.hasOwnProperty(i)) {
+//         var check = callbackfn(this[i], i, this);
+//         if (!check) {
+//           return false;
+//         }
+//       }
+//     }
+//     return true;
+//   } else {
+//     throw new TypeError (`$(callbackfn) is not a function`)
+//   }
+// }
 
 
-// var hasAllCarFree = cars._every((car) => car.price === 0);
+// // var hasAllCarFree = cars._every((car) => car.price === 0);
 
-var hasAllCarFree = cars._every((car) => {
-  console.log(car)
-  return car.price ===0;
-})
+// var hasAllCarFree = cars._every((car) => {
+//   console.log(car)
+//   return car.price ===0;
+// })
 
-console.log(hasAllCarFree);
+// console.log(hasAllCarFree);
 // _forEach (Kiều)
 /* Array.prototype._forEach = function (callbackfn, thisArgs) {
   if (typeof callbackfn === 'function') {
